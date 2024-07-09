@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
+﻿
 namespace WeatherApi.Services;
 
 public class RandomWeatherService : IWeatherService
 {
-    private static readonly IList<string> ColdAdjectives = ["Freezing", "Bracing", "Chilly", "Cool"];
+    private static readonly IList<string> ColdAdjectives = new string[] { "Freezing", "Bracing", "Chilly", "Cool" };
     private static string[] Summaries = new string[] { "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
 
     public Task<WeatherForecast[]> GetWeatherForecasts()
