@@ -1,13 +1,17 @@
-﻿namespace WeatherApi.Services;
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace WeatherApi.Services;
 
 public class RandomWeatherService : IWeatherService
 {
     private static readonly IList<string> ColdAdjectives = ["Freezing", "Bracing", "Chilly", "Cool"];
-    private static readonly string[] Summaries = [ ..ColdAdjectives, "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"];
+    private static string[] Summaries = new string[] { "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
 
     public Task<WeatherForecast[]> GetWeatherForecasts()
     {
-        var weatherForecasts =  Enumerable
+        Summaries = Summaries.Concat(ColdAdjectives).ToArray();
+        var weatherForecasts = Enumerable
             .Range(1, 5)
             .Select(index =>
                 new WeatherForecast(
