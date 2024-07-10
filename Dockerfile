@@ -4,7 +4,7 @@ WORKDIR /src/WeatherApi
 
 # copy csproj and restore as distinct layers
 COPY src/**/*.csproj ./
-RUN dotnet restore --force --force-evaluate -v d
+RUN dotnet restore --force -v d
 
 # copy everything else and build app
 COPY src/WeatherApi/. ./
