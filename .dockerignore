@@ -1,0 +1,17 @@
+## NETSDK1064: Package DnsClient, 1.2.0 was not found --> https://stackoverflow.com/questions/61167032/error-netsdk1064-package-dnsclient-1-2-0-was-not-found
+## https://github.com/dotnet/sdk/issues/37291
+
+# directories
+**/bin/
+**/obj/
+**/out/
+
+# files
+Dockerfile*
+**/*.trx
+**/*.md
+**/*.ps1
+**/*.cmd
+**/*.sh
+.dotnet
+.Microsoft.DotNet.ImageBuilder
